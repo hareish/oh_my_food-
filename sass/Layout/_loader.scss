@@ -1,0 +1,57 @@
+@mixin loader{
+    position: fixed;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    height: 105vh;
+    opacity: 1;
+    animation: loader-bg 1s ease-in-out 3s 1 normal forwards;
+    @include flex;
+    flex-direction: column;
+    transform: translateY(-80px);
+
+    @keyframes loader-bg {
+        0% {
+            opacity: 1;
+        }
+
+        99% {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+
+    &__cube {
+        width: 200px;
+        height: 200px;
+        transform: translate(-50%, -50%);
+        animation-name: loader-cube;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 3;
+        animation-duration: 1.5s;
+        background: linear-gradient($color-secondaire, $color-primaire);
+
+        @keyframes loader-cube {
+            0% {
+                transform: rotate(0deg);
+                border-radius: 100%;
+            }
+
+            50% {
+                transform: rotate(-180deg);
+                border-radius: 10%;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                border-radius: 100%;
+            }
+        }
+
+    }
+}

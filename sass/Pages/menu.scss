@@ -1,0 +1,199 @@
+.menu {
+    width: 100%;
+    height: 1388px;
+
+    &--height {
+        height: 1478px;
+    }
+
+    &__img {
+        height: 300px;
+        width: 100%;
+    }
+
+    &__ctn {
+        background-color: $color-bg;
+        border-radius: 30px 30px 0 0;
+        padding-top: 30px;
+        transform: translateY(-70px);
+        @include flex;
+        flex-direction: column;
+        height: 1154px;
+
+        &--height{
+        height: 1244px;
+        }
+
+        &__title {
+            @include font-title;
+            font-size: 26px;
+        }
+
+        &__title-icon {
+            @include flex(center, space-between);
+            width: 100%;
+            padding: 0 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+    }
+
+    // MENU
+    &__ctn__box {
+        margin-top: 20px;
+        @include flex(center, space-between);
+        flex-direction: column;
+        width: 100%;
+        max-width: 600px;
+
+
+        &>h2 {
+            width: 100%;
+            text-align: start;
+            padding-left: 20px;
+            font-size: 16px;
+            color: $color-dark;
+            font-weight: lighter;
+
+            &::after {
+                content: "";
+                width: 40px;
+                height: 3px;
+                background-color: $color-tertiaire;
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+
+    }
+
+    &__ctn__btn {
+        @include button(185px, 50px);
+        margin: auto;
+        
+    }
+}
+
+// MENU
+
+.ctn {
+    overflow: hidden;
+    cursor: pointer;
+    animation-name: on-load;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    background-color: #fff;
+    width: 90%;
+    height: 70px;
+    margin: 10px 0;
+    border-radius: 15px;
+    padding-left: 15px;
+    @include flex(center, space-between);
+    box-shadow: 3px 5px 15px rgba($color: #000000, $alpha: 0.2);
+    opacity: 0;
+
+    &__txt {
+        flex-grow: 1;
+
+        &>h1 {
+            margin-bottom: 5px;
+            font-size: 18px;
+            text-overflow: ellipsis;
+            width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+
+        }
+
+        &__ctn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 10px;
+
+            &>p:nth-child(2) {
+                font-weight: bold;
+                font-size: 14px;
+                margin-left: 10px;
+            }
+
+            & p:first-child {
+                flex-grow: 1;
+                font-size: 14px;
+                color: $color-dark;
+                text-overflow: ellipsis;
+                width: 100px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__check {
+        width: 0;
+        background-color: $color-tertiaire;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        transition: 400ms;
+        transform-origin: right;
+        overflow: hidden;
+        border-radius: 0 15px 15px 0;
+
+        &>i {
+            font-size: 20px;
+        }
+    }
+
+    &:hover .ctn__check {
+        width: 60px;
+        transition: 400ms;
+    }
+
+    &:hover .ctn__check>i {
+        animation-name: rotate;
+        animation-duration: 400ms;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes on-load {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+
+        }
+    }
+
+    &--2 {
+        animation-delay: 100ms;
+    }
+
+    &--3 {
+        animation-delay: 200ms;
+    }
+
+    &--4 {
+        animation-delay: 300ms;
+    }
+
+
+}
