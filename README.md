@@ -1,7 +1,7 @@
 # Hareish 
 Projet OC N°3 - Oh my Food | Parcours Développeur Web
 
-Lien : https://github.com/hareish/oh_my_food-.git
+Lien : https://hareish.github.io/oh_my_food-/
 
 **Oh my Food** est un projet réalisé dans le cadre de ma formation **Développeur Web** dispensée par **Openclassrooms**.
 ----------
